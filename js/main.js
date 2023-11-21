@@ -4,7 +4,7 @@ var itens;
 init();
 
 function init() {
-    fetch('http://localhost:3333/produto')
+    fetch('https://api-lista-compras.vercel.app/produto')
         .then(response => response.json())
         .then(data => {
             // faça algo com os dados retornados
@@ -42,7 +42,7 @@ form.addEventListener("submit", (evento) => {
 
     if (existe) {
 
-        fetch("http://localhost:3333/produto/" + existe.id, {
+        fetch("https://api-lista-compras.vercel.app/produto/" + existe.id, {
             method: "PUT",
             headers: {
                 'Accept': 'application/json',
@@ -59,7 +59,7 @@ form.addEventListener("submit", (evento) => {
 
     } else {
 
-        fetch('http://localhost:3333/produto', {
+        fetch('https://api-lista-compras.vercel.app/produto', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -117,7 +117,7 @@ function botaoDeleta(id) {
 }
 
 function deletaElemento(tag, id) {
-    fetch('http://localhost:3333/produto/' + id, {
+    fetch('https://api-lista-compras.vercel.app/produto/' + id, {
         method: 'DELETE',
     }).then(res => {
         console.log(res.data)
